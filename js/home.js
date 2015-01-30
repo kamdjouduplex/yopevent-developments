@@ -189,9 +189,8 @@ var yopevent = angular.module('yopevent',
 	// Second controller manging a signle event
 	// deleting, editing, deleting etc..
 	yopevent.controller('eventCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
-		console.log(eventsObject);
-		$scope.clickedEvent = eventsObject;
-		console.log($routeParams.id);
+		var id = $routeParams.id;
+		$scope.clickedEvent = eventsObject[id];
 	}]);
 
 	//Third controller managing all the contents of the app
