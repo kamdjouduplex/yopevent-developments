@@ -1,0 +1,136 @@
+<div ng-controller="eventCtrl">
+<div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&appId=208819062661168&version=v2.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+	        <!-- SUB-HEADER area -->
+        <div class="pm-sub-header-container pm-parallax-panel" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
+        	
+           
+            
+        </div>
+        
+        <!-- SUB-HEADER area end -->
+        
+        <!-- BODY CONTENT starts here -->
+        
+        <div class="container pm-containerPadding80">
+        	<div class="row">
+            
+            	<!-- Blog post area -->
+                <div class="col-lg-9 col-md-8 col-sm-12">
+                
+                	<div class="row">
+                    
+                    <!-- News post -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 pm-column-spacing">
+
+                        <div class="pm-news-post-container">
+
+                            <div class="pm-news-post-image">
+                                <img src="img/posts/p3.jpg" />
+                                <div class="pm-news-post-title">
+                                    
+                                    <p>{{clickedEvent.tv_program}} @{{clickedEvent.spot}}</p>
+                                </div>
+                            </div>
+
+                            <div class="pm-news-post-meta-container">
+                                <div class="pm-news-post-date">
+                                    <p class="day">{{clickedEvent.eventday}}</p>
+                                    <p class="month-year">
+                                    {{clickedEvent.eventMonth}}<br />
+                                    {{clickedEvent.eventYear}}</p>
+                                </div>
+                            </div>
+
+                            <div class="pm-news-post-desc-container">
+                                <div class="col-lg-7 col-md-7 col-sm-6"> 
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="col-lg-5 col-md-5 col-sm-6">
+                                            <ul class="pm-meta-options-list">
+                                                
+                                                <li eventsbtn> <a href="#" class="btn btn-small btn-info eventsbtn"><span class="fa fa-thumbs-up"></span> &nbsp; Like</a></li>
+                                                <li eventsbtn> <a href="#" class="btn btn-small btn-danger eventsbtn"><span class="fa fa-user"></span> &nbsp; Join</a></li>
+                                                
+                                                <li> &nbsp;</li>
+                                            </ul>
+                                        </div>
+                                         <div class="col-lg-7 col-md-7 col-sm-6">
+                                            <ul class="pm-meta-options-list">
+                                                <li><i class="fa fa-calendar"></i> &nbsp;
+                                                {{clickedEvent.starttime}}</li>
+                                                <li><i class="fa fa-clock-o"></i> &nbsp;{{clickedEvent.duration}}</li>
+                                                <li><i class="fa fa-users"></i> &nbsp;
+                                                <a href="" title="">{{friends[0].name}}</a> and
+                                                  {{friends.length}}
+                                                 others will be there</li>
+                                                <li><i class="fa fa-user"></i> &nbsp;Hosted by 
+                                                <a href="" title="">{{user.name}}</a></li>
+                                                <li> &nbsp;</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            
+                                        </div>
+                                    </div>      
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-12">
+                                    <ul class="pm-meta-options-list">
+                                        <li> <h6>Description</h6>
+                                             {{clickedEvent.description}}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- News post end -->
+
+
+                
+
+                                            
+                    </div><!-- /.row -->
+                    
+                   
+                
+                </div>
+                <!-- Blog post area end -->
+                
+                
+                <!-- Sidebar area -->
+                <aside>
+                    <div class="col-lg-3 col-md-4 col-sm-12 pm-sidebar">
+
+                        <!-- General Text widget -->
+                        <div class="pm-widget">
+                        	
+                            <h6>what's a yopevent?</h6>
+                            
+                            <p>Each yopevent is an invitation to have some TV fun time. </p>
+                            <p>Join a great one and share to invite more friends </p>
+                        </div>
+                        <!-- General Text widget end --> 
+                        
+                    </div>
+                </aside>
+                <!-- Sidebar area end -->
+                        
+            </div>
+        </div>
+        
+            
+        
+           
+        <!-- BODY CONTENT end -->
+</div>

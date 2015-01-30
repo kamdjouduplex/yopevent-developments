@@ -1,0 +1,151 @@
+<div ng-controller="eventCtrl">
+    <!-- SUB-HEADER area -->
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&appId=208819062661168&version=v2.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div class="pm-sub-header-container pm-parallax-panel" 
+        data-stellar-background-ratio="0.5" 
+        data-stellar-vertical-offset="0">
+    </div>
+
+    <!-- SUB-HEADER area end -->
+
+    <!-- BODY CONTENT starts here -->
+
+    <div class="container pm-containerPadding80">
+        <div class="row">
+
+            <!-- Blog post area -->
+            <div class="col-lg-9 col-md-8 col-sm-12">
+
+                <div class="row">
+
+                    <!-- News post -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 pm-column-spacing">
+
+                        <div class="pm-news-post-container">
+
+                            <div class="pm-news-post-image">
+                            <img src="" id="preview" />
+                                
+                                <div class="overlay">
+                                    <span class="camera"><i class="fa fa-camera"></i> <span class="cameratext"> Change cover image</span></span>
+                                </div>
+                                <div class="pm-news-post-title">
+                                    <p>Otto Akama's Profile</p>
+                                </div>
+                            </div>
+
+                            <div class="pm-news-post-meta-container">
+                                
+                            </div>
+
+                            <div class="pm-news-post-desc-container">
+                                <div class="col-lg-8 col-md-8 col-sm-6">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="col-lg-5 col-md-5 col-sm-6">
+                                            <ul class="pm-meta-options-list">
+
+                                                <li>
+                                                    <h6>Profile Picture</h6>
+                                                </li>
+                                                <li eventsbtn>
+                                                    <img width="250px" height="250px" class="img-responsive" src="http://uctoutreach.org/yopevent/images/profilephoto.jpg" alt="" style="margin-top:10px">
+                                                </li>
+
+                                                <li>
+                                                    <form>
+                                                        <input type="file" value="change profile picture">
+                                                    </form>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                            <ul class="pm-meta-options-list">
+                                                <li>
+                                                    <h6>Basic Information</h6>
+                                                </li>
+                                                <form></form>
+                                                <li>
+                                                    <input type="text" name="name" placeholder=" Your Name: Name on FB">
+                                                </li>
+                                                <br />
+                                                <li>
+                                                    <input type="text" name="nickName" placeholder=" Nick Name: FB username">
+                                                </li>
+                                                <br />
+                                                <li>
+                                                    <input type="email" name="email" placeholder=" Email: FB email">
+                                                </li>
+
+                                            </form>
+                                            <li>&nbsp;<input 
+                                            type="file" id="file" 
+                                            onchange="previewFile()" />
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <ul class="pm-meta-options-list">
+                                    <li>
+                                        <h6>Brag A little</h6>
+                                        <textarea></textarea>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <!-- News post end -->
+
+
+
+
+
+            </div>
+            <!-- /.row -->
+
+
+
+        </div>
+        <!-- Blog post area end -->
+
+
+        <!-- Sidebar area -->
+        <aside>
+            <div class="col-lg-3 col-md-4 col-sm-12 pm-sidebar">
+
+                <!-- General Text widget -->
+                <div class="pm-widget">
+
+                    <h6>what's a yopevent?</h6>
+
+                    <p>Each yopevent is an invitation to have some TV fun time.</p>
+                    <p>Join a great one and share to invite more friends</p>
+                </div>
+                <!-- General Text widget end -->
+
+            </div>
+        </aside>
+        <!-- Sidebar area end -->
+
+    </div>
+</div>
+<script src="js/imagesUploader.js" type="text/javascript" charset="utf-8" async defer></script>
+
+
+<!-- BODY CONTENT end -->
+
+</div>

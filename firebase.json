@@ -1,0 +1,9 @@
+{
+  "firebase": "yopisode-event",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
