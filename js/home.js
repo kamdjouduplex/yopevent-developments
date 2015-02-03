@@ -37,7 +37,9 @@ var yopevent = angular.module('yopevent',
 	   	//initialy we hide the login/logout status
 	   	$scope.state = false;
 
-	   	//here we call the facebook authentication to check your astatus 
+	   	/*
+	   	/*here we call the facebook authentication to check your astatus 
+	   	*/
 	    $scope.$on('fb.auth.authResponseChange', function() {
 	      $scope.status = $facebook.isConnected();
 	    // after checking it we show now your login/logout status
@@ -49,7 +51,9 @@ var yopevent = angular.module('yopevent',
 	      	//get user basic information
 	        $facebook.api('/me').then(function(user) {
 	          $scope.user = user;
-
+	          //make the user object global
+	          userBoject = user;
+	          //create a user object to store in the database
 	          var User = {
 	          	id: $scope.user.id,
 	          	fb_name: $scope.user.name,
@@ -100,7 +104,7 @@ var yopevent = angular.module('yopevent',
 
 	    $scope.create = function() {
 	    	var Event = {};	    	
-
+	    	if($scope.status){
 	    			var eventDate = $scope.startdate;
 			    	var eventArray = eventDate.split("-");
 			    	var month = eventArray[1];
@@ -145,7 +149,7 @@ var yopevent = angular.module('yopevent',
 				coverUrl: ''
 			};
 			
-	    	if($scope.status){
+	    	
 	    		rootRef.child("Events").push(Event);
 	    		$('#myModal').modal('toggle');
 	    		$location.path("/editevent");
@@ -157,11 +161,14 @@ var yopevent = angular.module('yopevent',
 	    	
 	    		});
 	    	}else{
-	    		console.log("You are not connected, login for free an create your event.");
+	    		$('#myModal').modal('toggle');
+	    		$('#loginModal').modal('toggle');
 	    	}
 	    };
 
-	    
+	    $scope.closemodal =function() {
+	    	$('#loginModal').modal('toggle');
+	    }
 
 	    $scope.loginToggle = function() {
 	      if($scope.status) {
@@ -191,6 +198,20 @@ var yopevent = angular.module('yopevent',
 	yopevent.controller('eventCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
 		var id = $routeParams.id;
 		$scope.clickedEvent = eventsObject[id];
+
+		/*
+		/* this is to handled the join button 
+		/* so that when the user clicked once it deactiveted the button
+		*/
+		$('#joinEvent').one('click', function() {
+		    var joiner = {};
+				joiner = {
+					id: userBoject.id,
+					name: userBoject.name
+				};
+			rootRef.child("Events").child(id).child("joiners").push(joiner);
+		});
+		
 	}]);
 
 	//Third controller managing all the contents of the app
